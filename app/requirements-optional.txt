@@ -1,0 +1,2 @@
+# Necessário para criar artes JPEG locais e converter mídias para Instagram.
+Pillow>=11.3,<13

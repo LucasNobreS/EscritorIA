@@ -1,0 +1,63 @@
+name: Gerar instalador Windows
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2025
+    defaults:
+      run:
+        working-directory: app
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Conferir versao e etiqueta
+        shell: python
+        run: |
+          from pathlib import Path
+          import os, re
+          version = re.search(r"VERSION\s*=\s*[\"']([^\"']+)[\"']", Path('server.py').read_text(encoding='utf-8')).group(1)
+          boot = re.search(r"h.version!=='([^']+)'", Path('web/boot.js').read_text(encoding='utf-8')).group(1)
+          assert version == boot, 'Interface e servidor com versoes diferentes'
+          if os.environ.get('GITHUB_REF_TYPE') == 'tag':
+              assert os.environ['GITHUB_REF_NAME'] == 'v'+version, 'Tag diferente da versao do aplicativo'
+      - name: Testar backend
+        run: |
+          python -m pip install Pillow
+          python -m unittest discover -s ../tests
+      - name: Testar interface
+        shell: pwsh
+        run: |
+          $testFiles = @(Get-ChildItem ../tests/*.test.cjs | ForEach-Object { $_.FullName })
+          node --test @testFiles
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Instalar Inno Setup se necessario
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup --yes --no-progress }
+      - name: Gerar aplicativo e instalador
+        env:
+          ATELIE_RELEASE_REPO: ${{ github.repository }}
+        run: python build_windows.py --installer --headless
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EscritorIA-Instalador-Windows
+          path: |
+            app/release/EscritorIA-Setup.exe
+            app/release/AtelieIA-Setup.exe
+            app/release/SHA256SUMS.txt
+          if-no-files-found: error
+      - name: Publicar release com instalador
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release create $env:GITHUB_REF_NAME release/EscritorIA-Setup.exe release/AtelieIA-Setup.exe release/SHA256SUMS.txt --verify-tag --title "EscritorIA $env:GITHUB_REF_NAME" --notes "Instalador Windows. Dados locais preservados. Requer WebView2 Runtime."

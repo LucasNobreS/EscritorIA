@@ -1,0 +1,6 @@
+{
+  "mode": "demo",
+  "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+  "model": "auto-gemini-free",
+  "max_tokens": 2600
+}

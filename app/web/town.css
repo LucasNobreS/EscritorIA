@@ -1,0 +1,43 @@
+#townCanvas{position:absolute;inset:0;z-index:1;background:#a6bfba;touch-action:none}
+#townCanvas[hidden],#townHud[hidden],#npcPanel[hidden]{display:none!important}
+#townControls{position:absolute;left:26px;top:165px;z-index:3;max-width:min(480px,calc(100% - 52px));font-size:11px;filter:drop-shadow(0 8px 16px #183a4030)}
+.town-toolbar{display:flex;align-items:center;gap:8px;padding:7px;border:1px solid #dbe5e526;border-radius:13px;background:#203849ed;backdrop-filter:blur(12px)}
+.town-toolbar button{font-size:11px;white-space:nowrap;padding:10px 12px;background:#ffffff0c;border:1px solid #ffffff18}
+#visitTown{background:#e8d6a3;color:#293c48;border-color:#f4e4bb;font-weight:650}
+#townShift{color:#d7e5d5;font-size:10px;padding:0 4px}
+#townCommandBox{margin-top:7px;background:#203849ed;border:1px solid #ffffff18;border-radius:11px;padding:10px 13px;max-width:420px}
+#townCommandBox summary{color:#dce6e3;font-size:11px}
+#townCommand{display:flex;gap:8px;margin:12px 0 7px}#townCommand input{min-width:0}
+#townCommandBox small{color:#a9bfbd;font-size:10px}
+#game[data-city=true]>.hud,#game[data-city=true]>.location,#game[data-city=true]>.zoom{z-index:3}
+#game[data-city=true]>.team,#game[data-city=true]>#worldHint,#game[data-city=true]>.map-caption,#game[data-city=true]>.controls,#game[data-city=true]>.zoom{display:none}
+#game[data-city=true]>.location{display:none}
+#townHud{position:absolute;inset:0;z-index:2;pointer-events:none}
+.town-address{position:absolute;left:28px;bottom:32px;background:#203849e8;backdrop-filter:blur(12px);padding:19px 24px;border:1px solid #eef5e522;border-radius:15px;display:flex;flex-direction:column;gap:7px;box-shadow:0 12px 45px #18334330;max-width:calc(100% - 300px)}
+.town-address small{font-size:9px;letter-spacing:3px;color:#b2ccc3}.town-address strong{font-size:21px;font-weight:600;color:#f1edda}.town-address span{font-size:11px;color:#b9cfcb;line-height:1.5}
+.town-map{position:absolute;right:24px;bottom:26px;width:240px;border:1px solid #d9e5e521;border-radius:16px;background:#203849ed;padding:12px 8px 10px;box-shadow:0 12px 45px #18334330}
+.town-map canvas{width:220px;height:156px;background:transparent}.town-map span{display:block;text-align:center;font-size:9px;color:#d4e0d7}
+.town-social{position:absolute;right:25px;top:116px;width:245px;background:#203849e8;border:1px solid #ffffff15;border-radius:12px;padding:12px;pointer-events:auto;color:#dce7dc;font-size:10px;line-height:1.6}.town-social label{display:flex;align-items:center;gap:7px}.town-social small{display:block;color:#b2c8c4;font-size:9px;margin-top:5px}
+.town-bubble{position:absolute;max-width:280px;min-width:160px;transform:translate(-50%,-100%);background:#f4f0e1f5;border:1px solid #c4d0c5;border-radius:14px 14px 14px 2px;padding:12px 16px;color:#375563;font-size:12px;line-height:1.6;box-shadow:0 8px 20px #24445425;white-space:pre-line}
+#npcPanel{position:absolute;z-index:8;right:26px;top:106px;bottom:24px;width:min(430px,calc(100% - 40px));border:1px solid #d2e6e033;border-radius:20px;background:#203849f5;backdrop-filter:blur(20px);box-shadow:0 24px 90px #112c5260;padding:22px;display:flex;flex-direction:column;color:#e8eee5}
+#npcPanel header{display:flex;align-items:center;justify-content:space-between;gap:15px}#npcPanel header small{font-size:8px;letter-spacing:2px;color:#b8c9bb}#npcPanel h2{font-size:21px;line-height:1.3;margin:10px 0}#npcPanel header button{border-radius:50%;width:36px;height:36px;padding:0;flex-shrink:0}
+#townObjectPanel{position:absolute;z-index:5;right:25px;bottom:25px;width:min(350px,calc(100% - 35px));background:#203d49f5;border:1px solid #e4debd45;border-radius:17px;box-shadow:0 15px 45px #122d4d50;padding:18px 20px;backdrop-filter:blur(15px)}
+#townObjectPanel[hidden]{display:none!important}#townObjectPanel header{display:flex;justify-content:space-between;align-items:center;gap:14px}#townObjectPanel h3{font-size:15px;line-height:1.5;margin:0;color:#f1e7cb}#townObjectPanel header button{padding:5px 8px;background:transparent}#townObjectText{font-size:12px;line-height:1.8;color:#cfdfd6;margin:13px 0}#townObjectActions{display:flex;gap:8px;flex-wrap:wrap}#townObjectActions button{font-size:11px;background:#e8d6a3;color:#293c48;font-weight:600}
+.npc-description{font-size:11px;line-height:1.7;color:#b7ccca;margin:8px 0 18px;border-bottom:1px solid #ffffff16;padding-bottom:15px}#npcMessages{flex:1;min-height:0;overflow:auto;padding:0 4px;font-size:13px;line-height:1.7;scrollbar-width:thin}#npcMessages p{white-space:pre-wrap;overflow-wrap:anywhere;padding:13px 16px;border-radius:13px;margin:0 0 14px}.npc-user{background:#768f8a38;margin-left:35px!important}.npc-reply{background:#ffffff0a;margin-right:24px!important;border:1px solid #ffffff0c}#npcCompose{display:flex;gap:8px;padding-top:18px;border-top:1px solid #ffffff15}#npcCompose input{min-width:0;background:#132e3e!important}#npcSend{background:#e8d6a3;color:#293c48;font-weight:650}
+@media(max-width:800px){#townControls{left:12px;top:105px;max-width:calc(100% - 24px)}.town-toolbar{gap:4px}.town-toolbar button{font-size:10px;padding:9px 10px}#townShift{font-size:9px}.town-social{top:auto;bottom:124px;right:12px;width:205px;padding:9px}.town-map{display:none}.town-address{left:12px;bottom:15px;max-width:calc(100% - 24px);padding:15px 18px}.town-address strong{font-size:17px}.town-address span{font-size:10px}#npcPanel{right:10px;top:92px;bottom:10px;width:calc(100% - 20px);padding:18px}}
+
+/* The shift controls and roster share layout space instead of overlapping. */
+#officeSidebar{position:absolute;z-index:3;left:23px;top:161px;bottom:145px;width:200px;display:flex;flex-direction:column;gap:12px;pointer-events:none;overflow-y:auto;scrollbar-width:thin}
+#officeSidebar>*{pointer-events:auto;flex-shrink:0}
+#officeSidebar #townControls{position:static;max-width:none;width:100%;filter:none}
+#officeSidebar .team{position:static;transform:none;max-width:none;width:100%;max-height:none;overflow:visible;margin:0}
+#officeSidebar .town-toolbar{flex-wrap:wrap;gap:5px}
+#officeSidebar #townCommandBox{max-width:100%;margin-top:7px}
+#officeSidebar #townCommand{flex-direction:column}
+#officeSidebar #townCommand input{width:100%}
+#game[data-city=true] #officeSidebar .team{display:none}
+#game[data-city=true] #officeSidebar{bottom:auto;max-height:calc(100% - 330px)}
+@media(min-width:761px) and (max-width:1180px){#officeSidebar{left:16px;width:174px}}
+@media(max-width:760px){#officeSidebar{display:contents}#officeSidebar #townControls{position:absolute;left:12px;top:124px;width:195px;max-height:calc(100% - 310px);overflow:auto;z-index:3}#officeSidebar .team{position:absolute;left:12px;right:12px;top:auto;bottom:112px;width:auto;max-height:69px;overflow:auto;flex-direction:row;z-index:3}#game[data-city=true] #officeSidebar #townControls{max-height:calc(100% - 350px)}}
+
+#townEditor{position:absolute;z-index:7;right:16px;top:100px;bottom:24px;width:290px;overflow:auto;background:#1e3049f5;border:1px solid #a6c2c7;border-radius:15px;padding:18px;scrollbar-width:thin}#townEditor[hidden]{display:none}#townEditor h2{font-size:18px}#townEditor p{font-size:11px;line-height:1.6}#townEditor label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:9px 0;font-size:12px}#townEditor input[type=color]{width:55px;height:32px;padding:2px}#roomCatalog{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:220px;overflow:auto}#roomCatalog button{padding:5px;font-size:10px}#roomCatalog canvas{width:100%;height:75px;background:transparent}#roomEditResult{color:#f0cb91}#roomSave{background:#c5dfa1;color:#203849}@media(max-width:760px){#townEditor{top:80px;bottom:100px;width:240px;right:8px}}

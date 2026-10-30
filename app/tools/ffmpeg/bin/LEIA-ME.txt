@@ -1,0 +1,12 @@
+INSTALACAO MANUAL NO WINDOWS
+
+Coloque ffmpeg.exe e ffprobe.exe nesta pasta e reinicie Iniciar.bat.
+Os executaveis nao estao incluidos neste ZIP.
+
+Download oficial e links para compilacoes Windows:
+https://ffmpeg.org/download.html
+https://www.gyan.dev/ffmpeg/builds/
+
+No site Gyan, escolha release builds / ffmpeg-release-essentials.zip.
+Extraia o arquivo baixado. Os executaveis ficam na pasta bin da compilacao.
+Leia README.md do escritorio para o tutorial completo.

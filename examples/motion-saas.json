@@ -1,0 +1,47 @@
+{
+  "format": "landscape",
+  "quality": "720p",
+  "transition": "fade",
+  "brand": {
+    "name": "Ateliê IA",
+    "background": "#101b31",
+    "foreground": "#f5f7fc",
+    "accent": "#70e2bf"
+  },
+  "scenes": [
+    {
+      "kind": "motion",
+      "template": "title",
+      "title": "Seu projeto ganha movimento",
+      "subtitle": "Apresente uma solução com uma história visual clara.",
+      "duration": 3
+    },
+    {
+      "kind": "motion",
+      "template": "dashboard",
+      "title": "Mostre o que o produto faz",
+      "subtitle": "Painel ilustrativo, gráficos em movimento e cursor animado.",
+      "duration": 3
+    },
+    {
+      "kind": "motion",
+      "template": "features",
+      "title": "Do roteiro ao vídeo final",
+      "items": [
+        "Textos e identidade visual",
+        "Suas telas, logo e arquivos",
+        "Edição e áudio na montagem",
+        "Projeto salvo para reeditar"
+      ],
+      "duration": 3
+    },
+    {
+      "kind": "motion",
+      "template": "cta",
+      "title": "Crie a sua próxima apresentação",
+      "subtitle": "Motion SaaS renderizado localmente.",
+      "cta": "Comece pelo roteiro",
+      "duration": 3
+    }
+  ]
+}

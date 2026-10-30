@@ -1,0 +1,7 @@
+ESCRITORIA v0.45.0
+
+FONTES: extraia tudo e abra Iniciar.bat na raiz.
+Leia README.md antes de atualizar: use pasta nova e preserve dados/config.json.
+INSTALADOR: Gerar-instalador-Windows.bat no Windows ou workflow do GitHub.
+Saida: app/release/EscritorIA-Setup.exe. O EXE ainda precisa ser compilado.
+Guia: docs/WINDOWS.md.
