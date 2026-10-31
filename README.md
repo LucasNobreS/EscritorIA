@@ -8,7 +8,7 @@ Um escritório virtual local onde você monta uma equipe de IA, distribui projet
 
 *Interface gravada com dados fictícios, sem API conectada. O vídeo não representa uma execução real dos modelos.*
 
-[Vídeo da demonstração](docs/media/escritoria-demo.mp4) · [Configurar integrações](docs/INTEGRACOES.md) · [Gerar o aplicativo Windows](docs/WINDOWS.md)
+[Documentação](docs/README.md) · [Como contribuir](CONTRIBUTING.md) · [Vídeo da demonstração](docs/media/escritoria-demo.mp4) · [Configurar integrações](docs/INTEGRACOES.md) · [Gerar o aplicativo Windows](docs/WINDOWS.md)
 
 ## O que dá para fazer
 
@@ -111,3 +111,7 @@ python empacotar.py EscritorIA-v0.45.0.zip
 ```
 
 Antes de atualizar uma instalação existente, faça backup e preserve os dados conforme o guia Windows.
+
+## Licença
+
+Distribuído sob a [licença MIT](LICENSE).

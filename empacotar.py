@@ -41,11 +41,12 @@ EXT = {
 
 def build(destination):
     version = re.search(
-        r"VERSION\s*=\s*[\"']([^\"']+)[\"']", (ROOT / "app/server.py").read_text()
+        r"VERSION\s*=\s*[\"']([^\"']+)[\"']",
+        (ROOT / "app/server.py").read_text(encoding="utf-8"),
     ).group(1)
-    assert "h.version!=='" + version + "'" in (ROOT / "app/web/boot.js").read_text(), (
-        "Versões inconsistentes"
-    )
+    assert "h.version!=='" + version + "'" in (ROOT / "app/web/boot.js").read_text(
+        encoding="utf-8"
+    ), "Versões inconsistentes"
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(ROOT.rglob("*")):
             rel = p.relative_to(ROOT)
@@ -54,6 +55,12 @@ def build(destination):
             if rel.as_posix() in (
                 ".github/workflows/windows-release.yml",
                 ".github/workflows/tests.yml",
+                ".github/ISSUE_TEMPLATE/bug_report.md",
+                ".github/ISSUE_TEMPLATE/feature_request.md",
+                ".github/pull_request_template.md",
+                ".editorconfig",
+                ".gitattributes",
+                "LICENSE",
                 ".gitignore",
             ):
                 z.write(p, Path("EscritorIA") / rel)
