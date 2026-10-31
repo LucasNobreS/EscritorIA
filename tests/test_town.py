@@ -155,13 +155,26 @@ class TownTests(unittest.TestCase):
     def test_autonomous_pair_is_generated_and_settings_persist(self):
         s.town.last_ambient = 0
         s.town.last_tick = 0
-        s.town.tick()
+        with patch.object(town.time, "monotonic", return_value=91):
+            s.town.tick()
         self.assertTrue(
             any(chat["partner"] is not None for chat in self.state()["town"]["chats"])
         )
         self.post("town/settings", {"npc_social": False})
         s.init_db()
         self.assertFalse(self.state()["town"]["npc_social"])
+
+    def test_autonomous_pair_waits_for_ambient_interval(self):
+        s.town.last_ambient = 0
+        s.town.last_tick = 0
+        with patch.object(town.time, "monotonic", return_value=90):
+            s.town.tick()
+        self.assertEqual(self.state()["town"]["chats"], [])
+        with patch.object(town.time, "monotonic", return_value=91):
+            s.town.tick()
+        self.assertTrue(
+            any(chat["partner"] is not None for chat in self.state()["town"]["chats"])
+        )
 
     def test_npc_chat_input_is_bounded(self):
         import urllib.error
