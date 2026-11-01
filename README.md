@@ -115,3 +115,9 @@ Antes de atualizar uma instalação existente, faça backup e preserve os dados 
 ## Licença
 
 Distribuído sob a [licença MIT](LICENSE).
+
+## Uso, manutenção e histórico
+
+O [índice da documentação](docs/README.md) reúne os guias de uso, integração, backup e diagnóstico. A [arquitetura detalhada](docs/ARQUITETURA.md) explica tarefas, concorrência e persistência.
+
+Consulte o [changelog](docs/CHANGELOG.md), o [histórico anterior ao Git](docs/HISTORICO.md) e o [processo de releases](docs/VERSOES.md). Os ZIPs históricos não fazem parte da árvore do código. As próximas validações estão no [roadmap](docs/ROADMAP.md); orientações de segurança estão em [SECURITY.md](SECURITY.md).

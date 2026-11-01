@@ -2,7 +2,7 @@
 
 ## Compilar no GitHub Actions
 
-1. Crie um repositório vazio na sua conta GitHub. Envie o conteúdo desta pasta, incluindo `.github/` e `.gitignore`. Não envie o ZIP como substituto dos fontes.
+1. No [repositório EscritorIA](https://github.com/LucasNobreS/EscritorIA), confira se as alterações desejadas já estão na branch que será compilada. Para uma cópia própria, envie os fontes, incluindo `.github/` e `.gitignore`, não apenas o ZIP.
 2. Abra **Actions → Gerar instalador Windows → Run workflow**. A execução manual gera um artefato para baixar; não publica uma release.
 3. Para publicar, crie a tag `v0.45.0` no mesmo commit. A versão da tag deve coincidir com a do app.
 4. O workflow testa Python e JavaScript, gera o EXE com PyInstaller, cria o instalador Inno Setup e anexa `EscritorIA-Setup.exe` e `SHA256SUMS.txt` à release. O alias antigo é mantido para atualizadores anteriores.
@@ -44,3 +44,5 @@ git push origin v0.45.0
 ```
 
 Acompanhe a execução em Actions e baixe o instalador em Releases quando terminar. Não declare o EXE disponível antes de o job finalizar.
+
+Para critérios de validação, tags e notas de publicação, siga [Versionamento e releases](VERSOES.md). Para preservação de dados, veja [Dados e backup](DADOS.md).

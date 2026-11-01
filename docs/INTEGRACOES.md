@@ -57,13 +57,13 @@ Os testes automatizados usam respostas controladas, sem suas chaves. A conexão 
 - Pollinations: https://enter.pollinations.ai/ — confira como obter a chave e os créditos disponíveis na sua conta. Vídeo não é coberto pela promessa de imagens/texto anônimos da API Classic.
 - Hugging Face: https://huggingface.co/settings/tokens — token com a permissão de usar Inference Providers. Confira cota/créditos em https://huggingface.co/docs/inference-providers/pricing ; a pequena cota de teste pode não pagar uma geração de vídeo.
 
-A existência de um modelo no catálogo não confirma que a sua conta pode executá-lo gratuitamente. O EscritorIA não cadastra cartão, compra saldo ou assina planos. Falta de saldo/cota gera erro; não há fallback para a fal paga. Uma resposta incerta precisa ser conferida no painel antes de novo pedido.
+A existência de um modelo no catálogo não confirma que a sua conta pode executá-lo gratuitamente. O EscritorIA não cadastra cartão, compra saldo ou assina planos. Falta de saldo/cota gera erro; não há fallback para a rota paga. Uma resposta incerta precisa ser conferida no painel antes de novo pedido.
 
 Vídeos por descrição são diferentes dos layouts motion: para texto exato, marca e interface legível, use o motor local com capturas reais. Depois você pode misturar uma cena gerada remotamente ao vídeo local.
 
 ## Se aparecia “serviço desconectado” após a primeira solicitação
 
-Atualize os arquivos do aplicativo para a v0.37.1 e reinicie pela pasta atualizada. Foi corrigida uma falha na rota de atualização do histórico, que recebia parâmetros e retornava 404 indevidamente. Não é necessário gerar outra chave FreeLLMAPI nem apagar seus dados para resolver essa falha.
+Use a versão atual do aplicativo (a correção foi introduzida na v0.37.1) e reinicie pela pasta atualizada. Foi corrigida uma falha na rota de atualização do histórico, que recebia parâmetros e retornava 404 indevidamente. Não é necessário gerar outra chave FreeLLMAPI nem apagar seus dados para resolver essa falha.
 
 Confira a versão do EscritorIA aberto: trocar arquivos do código-fonte não atualiza uma cópia EXE antiga. Falta real de conexão com o roteador na porta 3001 e erros de chave/cota ainda devem ser conferidos no painel FreeLLMAPI.
 
